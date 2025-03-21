@@ -1,0 +1,24 @@
+name: CI/CD Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+      working-directory: ./path-to-your-project # Adjust this path if needed
+
+    - name: Run tests
+      run: npm test
+      working-directory: ./path-to-your-projectThe failure occurred because the `package.json` file was # Adjust this path if needed
